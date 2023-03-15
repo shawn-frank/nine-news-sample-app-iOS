@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 
-class NewsFeedViewController: UIViewController {
+final class NewsFeedViewController: UIViewController {
     weak var mainCoordinator: MainCoordinator?
     private var newsAssetManager: NewsAssetManager!
+    private var newsFeedCollectionView: UICollectionView!
     
+    // MARK: UIViewController Lifecycle
     init(newsAssetManager: NewsAssetManager) {
         self.newsAssetManager = newsAssetManager
         super.init(nibName: nil, bundle: nil)
@@ -32,9 +34,37 @@ class NewsFeedViewController: UIViewController {
         }
     }
     
+    
+}
+
+extension NewsFeedViewController {
+    
+    // MARK: CONFIGURE LAYOUT
     private func configureInterface() {
         view.backgroundColor = .white
         navigationItem.setHidesBackButton(true, animated: false)
         title = Date().getGreeting()
+        configureCollectionView()
+    }
+    
+    private func configureCollectionView() {
+        newsFeedCollectionView = UICollectionView(frame: .zero,
+                                                  collectionViewLayout: getCollectionViewLayout())
+        newsFeedCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        newsFeedCollectionView.register(NewsFeedCell.self,
+                                        forCellWithReuseIdentifier: NewsFeedCell.identifier)
+        newsFeedCollectionView.dataSource = self
+        newsFeedCollectionView.delegate = self
+        newsFeedCollectionView.alwaysBounceVertical = true
+        newsFeedCollectionView.showsVerticalScrollIndicator = false
+        newsFeedCollectionView.backgroundColor = .clear
+        view.addSubview(newsFeedCollectionView)
+        newsFeedCollectionView.pin(to: view)
+    }
+    
+    private func getCollectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        return layout
     }
 }

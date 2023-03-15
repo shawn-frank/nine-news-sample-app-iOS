@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NewsAssetManager {
+final class NewsAssetManager {
     private(set) var newsAssets: [NewsAssetModel] = []
     private let newsService: NetworkService!
     

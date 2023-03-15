@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 import Combine
 
-class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController {
     
     weak var mainCoordinator: MainCoordinator?
     
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInterface()
@@ -27,6 +28,34 @@ class SplashViewController: UIViewController {
         print("deinnit")
     }
     
+    // MARK: INTENTS
+    private func fetchNewsAssets() {
+        let newsAssetManager = NewsAssetManager()
+        
+        newsAssetManager.updateUI = { [weak self] in
+            if let strongSelf = self {
+                strongSelf.mainCoordinator?.displayNewsAssets(with: newsAssetManager)
+            }
+        }
+        
+        Task {
+            do {
+                try await newsAssetManager.fetchNewsAssets()
+            }
+            catch {
+                if let error = error as? NetworkError {
+                    mainCoordinator?.presentErrorAlert(withMessage: error.localizedDescription)
+                }
+                else {
+                    mainCoordinator?.presentErrorAlert(withMessage: "An Unknown Error occured. Please try again later.")
+                }
+            }
+        }
+    }
+}
+
+extension SplashViewController {
+    // MARK: CONFIGURE LAYOUT
     private func configureInterface() {
         view.backgroundColor = .white
         configureSplashImage()
@@ -60,28 +89,5 @@ class SplashViewController: UIViewController {
             activityIndicator.heightAnchor.constraint(equalToConstant: CGFloat(SystemConstants.SplashScreen.progressViewHeight))
         ])
     }
-    
-    func fetchNewsAssets() {
-        let newsAssetManager = NewsAssetManager()
-        
-        newsAssetManager.updateUI = { [weak self] in
-            if let strongSelf = self {
-                strongSelf.mainCoordinator?.displayNewsAssets(with: newsAssetManager)
-            }
-        }
-        
-        Task {
-            do {
-                try await newsAssetManager.fetchNewsAssets()
-            }
-            catch {
-                if let error = error as? NetworkError {
-                    mainCoordinator?.presentErrorAlert(withMessage: error.localizedDescription)
-                }
-                else {
-                    mainCoordinator?.presentErrorAlert(withMessage: "An Unknown Error occured. Please try again later.")
-                }
-            }
-        }
-    }
 }
+
