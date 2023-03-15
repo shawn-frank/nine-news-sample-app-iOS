@@ -12,6 +12,7 @@ struct NewsAssetModel: Decodable, Hashable {
     let headline: String
     let abstract: String
     let author: String
+    let url: String
     let images: [NewsImageModel]
     
     enum CodingKeys: String, CodingKey {
@@ -19,6 +20,7 @@ struct NewsAssetModel: Decodable, Hashable {
         case headline
         case abstract = "theAbstract"
         case author = "byLine"
+        case url
         case images = "relatedImages"
     }
 }

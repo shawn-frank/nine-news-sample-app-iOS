@@ -31,7 +31,6 @@
 		2B38F7D629C1F5250077099A /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D529C1F5250077099A /* NewsFeedCell.swift */; };
 		2B38F7D829C1F7480077099A /* NewsFeedScreenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D729C1F7480077099A /* NewsFeedScreenConstants.swift */; };
 		2B38F7DA29C1F8580077099A /* NineColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D929C1F8580077099A /* NineColors.swift */; };
-		2B38F7E029C1FEAC0077099A /* NewsFeedViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7DF29C1FEAC0077099A /* NewsFeedViewController+Delegate.swift */; };
 		2B38F7E229C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		2B38F7D529C1F5250077099A /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		2B38F7D729C1F7480077099A /* NewsFeedScreenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedScreenConstants.swift; sourceTree = "<group>"; };
 		2B38F7D929C1F8580077099A /* NineColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineColors.swift; sourceTree = "<group>"; };
-		2B38F7DF29C1FEAC0077099A /* NewsFeedViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsFeedViewController+Delegate.swift"; sourceTree = "<group>"; };
 		2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsFeedViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				2B38F7CA29C1955D0077099A /* NewsFeedViewController.swift */,
-				2B38F7DF29C1FEAC0077099A /* NewsFeedViewController+Delegate.swift */,
 				2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */,
 				2B38F7D529C1F5250077099A /* NewsFeedCell.swift */,
 			);
@@ -355,7 +352,6 @@
 				2B38F7B829C16C6C0077099A /* NewsAssetModel.swift in Sources */,
 				2B38F7CB29C1955D0077099A /* NewsFeedViewController.swift in Sources */,
 				2B38F7D629C1F5250077099A /* NewsFeedCell.swift in Sources */,
-				2B38F7E029C1FEAC0077099A /* NewsFeedViewController+Delegate.swift in Sources */,
 				2B38F7C029C1722E0077099A /* NetworkErrors.swift in Sources */,
 				2B38F7B229C162340077099A /* SystemConstants.swift in Sources */,
 				2B38F7AC29C15EBE0077099A /* SplashViewController.swift in Sources */,

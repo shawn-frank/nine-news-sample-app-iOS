@@ -23,7 +23,9 @@ final class MainCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
     }
     
-    func displayNewsAssets(with newsAssetManager: NewsAssetManager) {
+    /// Displays news assets contained within a NewsAssetManager in a list format
+    /// - Parameter newsAssetManager: The configured NewsAssetManager view model object
+    func displayNewsAssets(from newsAssetManager: NewsAssetManager) {
         let newsFeedViewController = NewsFeedViewController(newsAssetManager: newsAssetManager)
         newsFeedViewController.mainCoordinator = self
         navigationController.setViewControllers([newsFeedViewController], animated: true)
@@ -39,5 +41,17 @@ final class MainCoordinator: Coordinator {
         }))
         
         navigationController.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    /// Loads a URL in a WKWebView
+    /// - Parameter urlString: The url to be loaded
+    func loadURL(_ urlString: String) {
+        guard let url = URL(string: urlString) else {
+            // handle errors
+            return
+        }
+        
+        print("Load: \(urlString)")
     }
 }

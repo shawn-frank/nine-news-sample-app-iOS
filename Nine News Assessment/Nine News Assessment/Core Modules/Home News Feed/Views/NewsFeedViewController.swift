@@ -33,13 +33,7 @@ final class NewsFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInterface()
-        
-        newsAssetManager.newsAssets.forEach { newsAsset in
-            print(newsAsset.author)
-        }
     }
-    
-    
 }
 
 // MARK: CONFIGURE LAYOUT
@@ -74,7 +68,7 @@ extension NewsFeedViewController {
     }
 }
 
-// MARK: CONFIGURE DATASOURCE
+// MARK: CONFIGURE COLLECTION VIEW DATASOURCE
 extension NewsFeedViewController {
     
     func configureDataSource() {
@@ -95,5 +89,16 @@ extension NewsFeedViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(newsAssetManager.newsAssets)
         dataSource.apply(snapshot, animatingDifferences: false)
+    }
+}
+
+// MARK: CONFIGURE COLLECTION VIEW DELEGATE
+extension NewsFeedViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let newsAsset = dataSource.itemIdentifier(for: indexPath) else {
+            return
+        }
+        
+        mainCoordinator?.loadURL(newsAsset.url)
     }
 }

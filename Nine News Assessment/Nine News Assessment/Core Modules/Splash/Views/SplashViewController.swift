@@ -24,17 +24,13 @@ final class SplashViewController: UIViewController {
         fetchNewsAssets()
     }
     
-    deinit {
-        print("deinnit")
-    }
-    
     // MARK: INTENTS
     private func fetchNewsAssets() {
         let newsAssetManager = NewsAssetManager()
         
         newsAssetManager.updateUI = { [weak self] in
             if let strongSelf = self {
-                strongSelf.mainCoordinator?.displayNewsAssets(with: newsAssetManager)
+                strongSelf.mainCoordinator?.displayNewsAssets(from: newsAssetManager)
             }
         }
         
