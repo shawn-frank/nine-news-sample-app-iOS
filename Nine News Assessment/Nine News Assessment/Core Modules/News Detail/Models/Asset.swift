@@ -8,6 +8,7 @@
 import Foundation
 
 struct Asset: Decodable {
+    let id: Int
     let headline: String
     let abstract: String
     let author: String
