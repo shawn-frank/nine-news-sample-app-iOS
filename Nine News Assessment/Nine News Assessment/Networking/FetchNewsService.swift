@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Network
 
 struct FetchNewsService: NetworkService {
+    typealias Response = NewsAsset
     
-    func fetchData<T>() async throws -> [T] where T : Decodable {
+    func fetchData() async throws -> [NewsAsset] {
         guard let fetchNewsURL = URL(string: SystemConstants.NetworkConstants.fetchNewsEndpoint) else {
             throw NetworkError.invalidURL
         }
@@ -19,7 +21,19 @@ struct FetchNewsService: NetworkService {
         
         guard let (data, response) = try? await session.data(for: urlRequest) else {
             // Would need to handle no internet error as well
-            throw
+            throw NetworkError.server
         }
+        
+        if let httpResponse = response as? HTTPURLResponse,
+           httpResponse.statusCode > 400 {
+            throw NetworkError.server
+        }
+        
+        guard let newsResponse = try? JSONDecoder().decode(NewsResponse.self,
+                                                           from: data) else {
+            throw NetworkError.decode
+        }
+        
+        return newsResponse.assets
     }
 }

@@ -12,7 +12,7 @@ enum NetworkError: Error {
     case server
     case decode
     case unknown
-    case noInterne
+    case noInternet
 }
 
 extension NetworkError: LocalizedError {
@@ -20,12 +20,14 @@ extension NetworkError: LocalizedError {
         switch self {
         case .invalidURL:
             return "Invalid URL"
-        case .serverError:
+        case .server:
             return "Server Error"
-        case .decodeError:
+        case .decode:
             return "Error parsing response"
-        case .unknownError:
+        case .unknown:
             return "An unknown error occured"
+        case .noInternet:
+            return "You do not seem to have a valid internet connection"
         }
     }
 }

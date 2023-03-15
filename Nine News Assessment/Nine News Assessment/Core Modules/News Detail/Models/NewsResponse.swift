@@ -8,5 +8,5 @@
 import Foundation
 
 struct NewsResponse: Decodable {
-    let assets: [Asset]
+    let assets: [NewsAsset]
 }

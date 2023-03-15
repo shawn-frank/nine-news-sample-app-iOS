@@ -8,5 +8,6 @@
 import Foundation
 
 protocol NetworkService {
-    func fetchData<T>() async throws -> [T] where T : Decodable
+    associatedtype Response
+    func fetchData() async throws -> [Response]
 }
