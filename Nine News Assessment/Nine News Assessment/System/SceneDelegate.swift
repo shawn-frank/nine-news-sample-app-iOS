@@ -10,16 +10,18 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var mainCoordinator: MainCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        mainCoordinator = MainCoordinator()
+        mainCoordinator?.start()
+        
         // Configuration to use the app without storyboards
-        let viewController = SplashViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = navigationController
+        window?.rootViewController = mainCoordinator?.navigationController
         window?.makeKeyAndVisible()
     }
 
