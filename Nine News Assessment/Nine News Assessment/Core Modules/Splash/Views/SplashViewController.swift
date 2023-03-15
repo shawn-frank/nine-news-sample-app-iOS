@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class SplashViewController: UIViewController {
     
@@ -20,6 +21,10 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchNewsAssets()
+    }
+    
+    deinit {
+        print("deinnit")
     }
     
     private func configureInterface() {
@@ -57,15 +62,25 @@ class SplashViewController: UIViewController {
     }
     
     func fetchNewsAssets() {
-        let vm = NewsAssetManager()
+        let newsAssetManager = NewsAssetManager()
+        
+        newsAssetManager.updateUI = { [weak self] in
+            if let strongSelf = self {
+                strongSelf.mainCoordinator?.displayNewsAssets(with: newsAssetManager)
+            }
+        }
         
         Task {
             do {
-                try await vm.fetchNewsAssets()
-                mainCoordinator?.displayNewsAssets(with: vm.newsAssets)
+                try await newsAssetManager.fetchNewsAssets()
             }
             catch {
-                
+                if let error = error as? NetworkError {
+                    mainCoordinator?.presentErrorAlert(withMessage: error.localizedDescription)
+                }
+                else {
+                    mainCoordinator?.presentErrorAlert(withMessage: "An Unknown Error occured. Please try again later.")
+                }
             }
         }
     }

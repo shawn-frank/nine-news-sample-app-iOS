@@ -23,9 +23,21 @@ class MainCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
     }
     
-    func displayNewsAssets(with newsAssets: [NewsAssetModel]) {
-        let newsFeedViewController = NewsFeedViewController()
+    func displayNewsAssets(with newsAssetManager: NewsAssetManager) {
+        let newsFeedViewController = NewsFeedViewController(newsAssetManager: newsAssetManager)
         newsFeedViewController.mainCoordinator = self
-        navigationController.pushViewController(newsFeedViewController, animated: true)
+        navigationController.setViewControllers([newsFeedViewController], animated: true)
+    }
+    
+    func presentErrorAlert(withMessage message: String) {
+        let alert = UIAlertController(title: "Error",
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.navigationController.dismiss(animated: true)
+        }))
+        
+        navigationController.present(alert, animated: true, completion: nil)
     }
 }

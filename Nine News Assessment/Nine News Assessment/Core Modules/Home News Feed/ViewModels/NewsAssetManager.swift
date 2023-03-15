@@ -15,6 +15,8 @@ class NewsAssetManager {
         self.newsService = newsService
     }
     
+    var updateUI: (() -> Void)?
+    
     @MainActor
     func fetchNewsAssets() async throws {
         guard let fetchNewsURL = URL(string: SystemConstants.NetworkConstants.fetchNewsEndpoint) else {
@@ -24,8 +26,6 @@ class NewsAssetManager {
         let responseModel: NewsResponseModel = try await newsService.fetchData(url: fetchNewsURL)
         newsAssets = responseModel.assets
         
-        newsAssets.forEach { asset in
-            print(asset.author)
-        }
+        updateUI?()
     }
 }

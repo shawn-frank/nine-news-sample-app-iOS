@@ -10,10 +10,26 @@ import UIKit
 
 class NewsFeedViewController: UIViewController {
     weak var mainCoordinator: MainCoordinator?
+    private var newsAssetManager: NewsAssetManager!
+    
+    init(newsAssetManager: NewsAssetManager) {
+        self.newsAssetManager = newsAssetManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // Even though this is considered unsafe, there is no chance of
+    // Storyboard instantiation in this projects
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInterface()
+        
+        newsAssetManager.newsAssets.forEach { newsAsset in
+            print(newsAsset.author)
+        }
     }
     
     private func configureInterface() {

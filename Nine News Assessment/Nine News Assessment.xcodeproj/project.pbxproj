@@ -27,6 +27,7 @@
 		2B38F7CD29C1967A0077099A /* NewsAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7CC29C1967A0077099A /* NewsAssetManager.swift */; };
 		2B38F7CF29C1CF410077099A /* NewsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7CE29C1CF410077099A /* NewsNetworkService.swift */; };
 		2B38F7D229C1D4560077099A /* Date+Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D129C1D4560077099A /* Date+Greeting.swift */; };
+		2B38F7D429C1DE3E0077099A /* SystemNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D329C1DE3E0077099A /* SystemNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2B38F7CC29C1967A0077099A /* NewsAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAssetManager.swift; sourceTree = "<group>"; };
 		2B38F7CE29C1CF410077099A /* NewsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetworkService.swift; sourceTree = "<group>"; };
 		2B38F7D129C1D4560077099A /* Date+Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Greeting.swift"; sourceTree = "<group>"; };
+		2B38F7D329C1DE3E0077099A /* SystemNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 		2B38F7B029C161FB0077099A /* System Constants */ = {
 			isa = PBXGroup;
 			children = (
+				2B38F7D329C1DE3E0077099A /* SystemNotifications.swift */,
 				2B38F7B129C162340077099A /* SystemConstants.swift */,
 				2B38F7B329C1624E0077099A /* SplashScreenConstants.swift */,
 				2B38F7C129C174170077099A /* NetworkConstants.swift */,
@@ -327,6 +330,7 @@
 				2B38F7CF29C1CF410077099A /* NewsNetworkService.swift in Sources */,
 				2B38F7C729C1908F0077099A /* Coordinator.swift in Sources */,
 				2B38F7C229C174170077099A /* NetworkConstants.swift in Sources */,
+				2B38F7D429C1DE3E0077099A /* SystemNotifications.swift in Sources */,
 				2B38F7BC29C171490077099A /* NetworkService.swift in Sources */,
 				2B38F7B629C16BAE0077099A /* NewsResponseModel.swift in Sources */,
 				2B38F7B429C1624E0077099A /* SplashScreenConstants.swift in Sources */,
@@ -493,7 +497,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mindhyve.practice.nine-assessment.Nine-News-Assessment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mindhyve.practice.nine-assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -522,7 +526,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mindhyve.practice.nine-assessment.Nine-News-Assessment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mindhyve.practice.nine-assessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
