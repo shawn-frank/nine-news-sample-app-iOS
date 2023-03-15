@@ -34,11 +34,16 @@ class NewsFeedCell: UICollectionViewCell {
         super.prepareForReuse()
     }
     
+    func loadNewsAsset(_ newsAsset: NewsAssetModel) {
+        headline.text = newsAsset.headline
+        abstract.text = newsAsset.abstract
+    }
 }
 
+// MARK: CONFIGURE LAYOUT
 extension NewsFeedCell {
     
-    // MARK: CONFIGURE LAYOUT
+    
     private func configureCell() {
         contentView.backgroundColor = .white
         configureImageView()

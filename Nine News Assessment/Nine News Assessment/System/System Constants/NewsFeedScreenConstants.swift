@@ -9,9 +9,9 @@ import Foundation
 
 extension SystemConstants {
     struct NewsFeed {
-        static let headlineHeight: Float = 35
+        static let headlineHeight: Float = 50
         static let headlineFontSize: Float = 16
-        static let headlineLines = 1
+        static let headlineLines = 2
         static let abstractLines = 4
         static let abstractFontSize: Float = 12
         static let cellHeight: Float = 130

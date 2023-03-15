@@ -86,7 +86,7 @@ extension NewsFeedViewController {
                 return UICollectionViewCell()
             }
             
-            cell.headline.text = newsAsset.headline
+            cell.loadNewsAsset(newsAsset)
             return cell
         }
         
