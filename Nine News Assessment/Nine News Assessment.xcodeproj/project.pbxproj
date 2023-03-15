@@ -13,6 +13,8 @@
 		2B38F79629C155190077099A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B38F79429C155190077099A /* LaunchScreen.storyboard */; };
 		2B38F7AC29C15EBE0077099A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7AB29C15EBE0077099A /* SplashViewController.swift */; };
 		2B38F7AF29C1609B0077099A /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7AE29C1609B0077099A /* UIView+Constraints.swift */; };
+		2B38F7B229C162340077099A /* SystemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7B129C162340077099A /* SystemConstants.swift */; };
+		2B38F7B429C1624E0077099A /* SplashScreenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7B329C1624E0077099A /* SplashScreenConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2B38F79729C155190077099A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B38F7AB29C15EBE0077099A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2B38F7AE29C1609B0077099A /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		2B38F7B129C162340077099A /* SystemConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstants.swift; sourceTree = "<group>"; };
+		2B38F7B329C1624E0077099A /* SplashScreenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,7 @@
 		2B38F78829C155180077099A /* Nine News Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				2B38F79D29C155A60077099A /* App Config */,
+				2B38F79D29C155A60077099A /* System */,
 				2B38F7A829C1587E0077099A /* Networking */,
 				2B38F7A729C1584E0077099A /* Helpers */,
 				2B38F79E29C157BF0077099A /* Core Modules */,
@@ -67,13 +71,14 @@
 			path = "Nine News Assessment";
 			sourceTree = "<group>";
 		};
-		2B38F79D29C155A60077099A /* App Config */ = {
+		2B38F79D29C155A60077099A /* System */ = {
 			isa = PBXGroup;
 			children = (
+				2B38F7B029C161FB0077099A /* System Constants */,
 				2B38F78929C155180077099A /* AppDelegate.swift */,
 				2B38F78B29C155180077099A /* SceneDelegate.swift */,
 			);
-			path = "App Config";
+			path = System;
 			sourceTree = "<group>";
 		};
 		2B38F79E29C157BF0077099A /* Core Modules */ = {
@@ -187,6 +192,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		2B38F7B029C161FB0077099A /* System Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2B38F7B129C162340077099A /* SystemConstants.swift */,
+				2B38F7B329C1624E0077099A /* SplashScreenConstants.swift */,
+			);
+			path = "System Constants";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B38F7B429C1624E0077099A /* SplashScreenConstants.swift in Sources */,
+				2B38F7B229C162340077099A /* SystemConstants.swift in Sources */,
 				2B38F7AC29C15EBE0077099A /* SplashViewController.swift in Sources */,
 				2B38F78A29C155180077099A /* AppDelegate.swift in Sources */,
 				2B38F78C29C155180077099A /* SceneDelegate.swift in Sources */,
