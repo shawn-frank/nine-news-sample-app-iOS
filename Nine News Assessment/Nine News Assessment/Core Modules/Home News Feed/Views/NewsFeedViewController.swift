@@ -12,6 +12,11 @@ final class NewsFeedViewController: UIViewController {
     weak var mainCoordinator: MainCoordinator?
     private var newsAssetManager: NewsAssetManager!
     private var newsFeedCollectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<NewsCollectionViewSection, NewsAssetModel>!
+    
+    enum NewsCollectionViewSection {
+        case main
+    }
     
     // MARK: UIViewController Lifecycle
     init(newsAssetManager: NewsAssetManager) {
@@ -37,9 +42,9 @@ final class NewsFeedViewController: UIViewController {
     
 }
 
+// MARK: CONFIGURE LAYOUT
 extension NewsFeedViewController {
     
-    // MARK: CONFIGURE LAYOUT
     private func configureInterface() {
         view.backgroundColor = .white
         navigationItem.setHidesBackButton(true, animated: false)
@@ -53,18 +58,42 @@ extension NewsFeedViewController {
         newsFeedCollectionView.translatesAutoresizingMaskIntoConstraints = false
         newsFeedCollectionView.register(NewsFeedCell.self,
                                         forCellWithReuseIdentifier: NewsFeedCell.identifier)
-        newsFeedCollectionView.dataSource = self
         newsFeedCollectionView.delegate = self
         newsFeedCollectionView.alwaysBounceVertical = true
         newsFeedCollectionView.showsVerticalScrollIndicator = false
         newsFeedCollectionView.backgroundColor = .clear
         view.addSubview(newsFeedCollectionView)
         newsFeedCollectionView.pin(to: view)
+        configureDataSource()
     }
     
     private func getCollectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         return layout
+    }
+}
+
+// MARK: CONFIGURE DATASOURCE
+extension NewsFeedViewController {
+    
+    func configureDataSource() {
+        // Create diffable data source & connect it to the collection view
+        dataSource = UICollectionViewDiffableDataSource<NewsCollectionViewSection, NewsAssetModel>(collectionView: newsFeedCollectionView) { (collectionView: UICollectionView, indexPath: IndexPath, newsAsset: NewsAssetModel) -> UICollectionViewCell? in
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsFeedCell.identifier,
+                                                                for: indexPath) as? NewsFeedCell else {
+                return UICollectionViewCell()
+            }
+            
+            cell.headline.text = newsAsset.headline
+            return cell
+        }
+        
+        // Load initial data
+        var snapshot = NSDiffableDataSourceSnapshot<NewsCollectionViewSection, NewsAssetModel>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(newsAssetManager.newsAssets)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }

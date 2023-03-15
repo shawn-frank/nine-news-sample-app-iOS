@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NewsAssetModel: Decodable {
+struct NewsAssetModel: Decodable, Hashable {
     let id: Int
     let headline: String
     let abstract: String
