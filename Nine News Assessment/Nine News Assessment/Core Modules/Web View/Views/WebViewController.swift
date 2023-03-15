@@ -11,6 +11,7 @@ import WebKit
 final class WebViewController: UIViewController {
     private let url: URL!
     private var webView: WKWebView?
+    private var activityIndicator: UIActivityIndicatorView?
     
     // MARK: UIViewController Lifecycle
     init(withURL url: URL) {
@@ -49,13 +50,43 @@ extension WebViewController {
         backButton.title = "Back"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         configureWebView()
+        configureActivityIndicator()
     }
     
     private func configureWebView() {
         let webview = WKWebView()
         webview.translatesAutoresizingMaskIntoConstraints = false
+        webview.navigationDelegate = self
         view.addSubview(webview)
         webview.pin(to: view)
         self.webView = webview
+    }
+    
+    private func configureActivityIndicator() {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicator)
+        configureActivityIndicatorLayoutConstraints(activityIndicator)
+        self.activityIndicator = activityIndicator
+    }
+    
+    private func configureActivityIndicatorLayoutConstraints(_ activityIndicator: UIActivityIndicatorView) {
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.widthAnchor.constraint(equalToConstant: CGFloat(SystemConstants.WebViewer.progressViewWidth)),
+            activityIndicator.heightAnchor.constraint(equalToConstant: CGFloat(SystemConstants.WebViewer.progressViewHeight))
+        ])
+    }
+}
+
+// MARK: WKNavigationDelegate IMPLEMENTATION
+extension WebViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        activityIndicator?.startAnimating()
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator?.stopAnimating()
     }
 }

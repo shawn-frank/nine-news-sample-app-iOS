@@ -33,6 +33,7 @@
 		2B38F7DA29C1F8580077099A /* NineColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D929C1F8580077099A /* NineColors.swift */; };
 		2B38F7E229C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */; };
 		2B38F7E629C27E220077099A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7E529C27E220077099A /* WebViewController.swift */; };
+		2B38F7E829C2831A0077099A /* WebViewerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7E729C2831A0077099A /* WebViewerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		2B38F7D929C1F8580077099A /* NineColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineColors.swift; sourceTree = "<group>"; };
 		2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsFeedViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
 		2B38F7E529C27E220077099A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2B38F7E729C2831A0077099A /* WebViewerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				2B38F7D329C1DE3E0077099A /* SystemNotifications.swift */,
 				2B38F7B129C162340077099A /* SystemConstants.swift */,
 				2B38F7B329C1624E0077099A /* SplashScreenConstants.swift */,
+				2B38F7E729C2831A0077099A /* WebViewerConstants.swift */,
 				2B38F7D729C1F7480077099A /* NewsFeedScreenConstants.swift */,
 				2B38F7C129C174170077099A /* NetworkConstants.swift */,
 				2B38F7D929C1F8580077099A /* NineColors.swift */,
@@ -334,6 +337,7 @@
 				2B38F7DA29C1F8580077099A /* NineColors.swift in Sources */,
 				2B38F7E629C27E220077099A /* WebViewController.swift in Sources */,
 				2B38F7D429C1DE3E0077099A /* SystemNotifications.swift in Sources */,
+				2B38F7E829C2831A0077099A /* WebViewerConstants.swift in Sources */,
 				2B38F7BC29C171490077099A /* NetworkService.swift in Sources */,
 				2B38F7B629C16BAE0077099A /* NewsResponseModel.swift in Sources */,
 				2B38F7B429C1624E0077099A /* SplashScreenConstants.swift in Sources */,
