@@ -48,10 +48,11 @@ final class MainCoordinator: Coordinator {
     /// - Parameter urlString: The url to be loaded
     func loadURL(_ urlString: String) {
         guard let url = URL(string: urlString) else {
-            // handle errors
+            presentErrorAlert(withMessage: "This news item is currently unavailable. Please try again later.")
             return
         }
         
-        print("Load: \(urlString)")
+        let webviewController = WebViewController(withURL: url)
+        navigationController.pushViewController(webviewController, animated: true)
     }
 }

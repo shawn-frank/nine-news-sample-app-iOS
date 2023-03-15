@@ -32,6 +32,7 @@
 		2B38F7D829C1F7480077099A /* NewsFeedScreenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D729C1F7480077099A /* NewsFeedScreenConstants.swift */; };
 		2B38F7DA29C1F8580077099A /* NineColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7D929C1F8580077099A /* NineColors.swift */; };
 		2B38F7E229C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */; };
+		2B38F7E629C27E220077099A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7E529C27E220077099A /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		2B38F7D729C1F7480077099A /* NewsFeedScreenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedScreenConstants.swift; sourceTree = "<group>"; };
 		2B38F7D929C1F8580077099A /* NineColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineColors.swift; sourceTree = "<group>"; };
 		2B38F7E129C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsFeedViewController+FlowLayoutDelegate.swift"; sourceTree = "<group>"; };
+		2B38F7E529C27E220077099A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +122,7 @@
 			children = (
 				2B38F7A929C15EA10077099A /* Splash */,
 				2B38F79F29C157D50077099A /* Home News Feed */,
-				2B38F7A029C157E90077099A /* News Detail */,
+				2B38F7A029C157E90077099A /* Web View */,
 			);
 			path = "Core Modules";
 			sourceTree = "<group>";
@@ -135,14 +137,12 @@
 			path = "Home News Feed";
 			sourceTree = "<group>";
 		};
-		2B38F7A029C157E90077099A /* News Detail */ = {
+		2B38F7A029C157E90077099A /* Web View */ = {
 			isa = PBXGroup;
 			children = (
-				2B38F7A429C1581C0077099A /* Models */,
 				2B38F7A529C1582B0077099A /* Views */,
-				2B38F7A629C1582F0077099A /* ViewModels */,
 			);
-			path = "News Detail";
+			path = "Web View";
 			sourceTree = "<group>";
 		};
 		2B38F7A129C158020077099A /* Models */ = {
@@ -173,25 +173,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		2B38F7A429C1581C0077099A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		2B38F7A529C1582B0077099A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B38F7E529C27E220077099A /* WebViewController.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2B38F7A629C1582F0077099A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		2B38F7A729C1584E0077099A /* Helpers & Utilities */ = {
@@ -345,6 +332,7 @@
 				2B38F7C229C174170077099A /* NetworkConstants.swift in Sources */,
 				2B38F7E229C1FEBB0077099A /* NewsFeedViewController+FlowLayoutDelegate.swift in Sources */,
 				2B38F7DA29C1F8580077099A /* NineColors.swift in Sources */,
+				2B38F7E629C27E220077099A /* WebViewController.swift in Sources */,
 				2B38F7D429C1DE3E0077099A /* SystemNotifications.swift in Sources */,
 				2B38F7BC29C171490077099A /* NetworkService.swift in Sources */,
 				2B38F7B629C16BAE0077099A /* NewsResponseModel.swift in Sources */,

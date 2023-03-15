@@ -50,8 +50,9 @@ final class SplashViewController: UIViewController {
     }
 }
 
+// MARK: CONFIGURE LAYOUT
 extension SplashViewController {
-    // MARK: CONFIGURE LAYOUT
+    
     private func configureInterface() {
         view.backgroundColor = .white
         configureSplashImage()
