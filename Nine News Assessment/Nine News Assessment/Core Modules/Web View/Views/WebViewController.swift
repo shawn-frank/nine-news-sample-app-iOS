@@ -64,20 +64,13 @@ extension WebViewController {
     
     private func configureActivityIndicator() {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.frame = CGRect(x: 0, y: 0,
+                                         width: CGFloat(SystemConstants.WebViewer.progressViewWidth),
+                                         height: CGFloat(SystemConstants.WebViewer.progressViewHeight))
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(activityIndicator)
-        configureActivityIndicatorLayoutConstraints(activityIndicator)
+        let refreshBarButton: UIBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+        self.navigationItem.rightBarButtonItem = refreshBarButton
         self.activityIndicator = activityIndicator
-    }
-    
-    private func configureActivityIndicatorLayoutConstraints(_ activityIndicator: UIActivityIndicatorView) {
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            activityIndicator.widthAnchor.constraint(equalToConstant: CGFloat(SystemConstants.WebViewer.progressViewWidth)),
-            activityIndicator.heightAnchor.constraint(equalToConstant: CGFloat(SystemConstants.WebViewer.progressViewHeight))
-        ])
     }
 }
 
