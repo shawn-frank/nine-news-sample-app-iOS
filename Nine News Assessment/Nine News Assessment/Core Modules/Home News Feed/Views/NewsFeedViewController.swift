@@ -16,6 +16,7 @@ class NewsFeedViewController: UIViewController {
     
     private func configureInterface() {
         view.backgroundColor = .white
-        title = "News Feed"
+        navigationItem.setHidesBackButton(true, animated: false)
+        title = Date().getGreeting()
     }
 }

@@ -10,13 +10,16 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
+    weak var mainCoordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInterface()
     }
     
-    func checkSwift() {
-        let vm = NewsAssetManager(newsService: FetchNewsService<[NewsAssetManager]>)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchNewsAssets()
     }
     
     private func configureInterface() {
@@ -51,5 +54,19 @@ class SplashViewController: UIViewController {
             activityIndicator.widthAnchor.constraint(equalToConstant: CGFloat(SystemConstants.SplashScreen.progressViewWidth)),
             activityIndicator.heightAnchor.constraint(equalToConstant: CGFloat(SystemConstants.SplashScreen.progressViewHeight))
         ])
+    }
+    
+    func fetchNewsAssets() {
+        let vm = NewsAssetManager()
+        
+        Task {
+            do {
+                try await vm.fetchNewsAssets()
+                mainCoordinator?.displayNewsAssets(with: vm.newsAssets)
+            }
+            catch {
+                
+            }
+        }
     }
 }

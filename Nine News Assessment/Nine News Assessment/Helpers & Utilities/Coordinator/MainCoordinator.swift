@@ -14,6 +14,7 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let initialViewController = SplashViewController()
+        initialViewController.mainCoordinator = self
         navigationController.pushViewController(initialViewController, animated: false)
         customizeNavigationController()
     }
@@ -22,7 +23,7 @@ class MainCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
     }
     
-    func loadNewsAssets(_ newsAssets: [NewsAssetModel]) {
+    func displayNewsAssets(with newsAssets: [NewsAssetModel]) {
         let newsFeedViewController = NewsFeedViewController()
         navigationController.pushViewController(newsFeedViewController, animated: true)
     }

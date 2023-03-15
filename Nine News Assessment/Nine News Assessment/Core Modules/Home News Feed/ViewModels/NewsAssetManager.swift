@@ -9,13 +9,23 @@ import Foundation
 
 class NewsAssetManager {
     private(set) var newsAssets: [NewsAssetModel] = []
-    private let newsService: NewsFeedNetworkService!
+    private let newsService: NetworkService!
     
-    init(newsService: NewsFeedNetworkService = FetchNewsService()) {
+    init(newsService: NetworkService = NewsNetworkService()) {
         self.newsService = newsService
     }
     
+    @MainActor
     func fetchNewsAssets() async throws {
+        guard let fetchNewsURL = URL(string: SystemConstants.NetworkConstants.fetchNewsEndpoint) else {
+            throw NetworkError.invalidURL
+        }
         
+        let responseModel: NewsResponseModel = try await newsService.fetchData(url: fetchNewsURL)
+        newsAssets = responseModel.assets
+        
+        newsAssets.forEach { asset in
+            print(asset.author)
+        }
     }
 }
