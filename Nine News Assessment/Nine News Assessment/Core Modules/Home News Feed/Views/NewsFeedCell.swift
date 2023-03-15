@@ -49,7 +49,7 @@ extension NewsFeedCell {
     
     private func configureImageView() {
         thumbNail = UIImageView()
-        thumbNail.backgroundColor = .gray
+        thumbNail.backgroundColor = .lightGray
         thumbNail.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbNail)
         thumbNail.contentMode = .scaleAspectFill
@@ -62,6 +62,7 @@ extension NewsFeedCell {
         headline.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(headline)
         headline.font = UIFont.boldSystemFont(ofSize: CGFloat(SystemConstants.NewsFeed.headlineFontSize))
+        headline.textColor = .headlineBlack
         headline.textAlignment = .left
         headline.text = SystemConstants.NewsFeed.sampleHeadline
         headline.numberOfLines = SystemConstants.NewsFeed.headlineLines
@@ -72,7 +73,7 @@ extension NewsFeedCell {
         abstract.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(abstract)
         abstract.font = UIFont.systemFont(ofSize: CGFloat(SystemConstants.NewsFeed.abstractFontSize))
-        abstract.textColor = .black
+        abstract.textColor = .abstractBlack
         abstract.textAlignment = .left
         abstract.text = SystemConstants.NewsFeed.sampleAbstract
         abstract.numberOfLines = SystemConstants.NewsFeed.abstractLines
