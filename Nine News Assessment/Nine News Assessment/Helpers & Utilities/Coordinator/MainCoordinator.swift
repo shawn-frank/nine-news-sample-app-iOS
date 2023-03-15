@@ -21,4 +21,9 @@ class MainCoordinator: Coordinator {
     func customizeNavigationController() {
         navigationController.navigationBar.prefersLargeTitles = true
     }
+    
+    func loadNewsAssets(_ newsAssets: [NewsAssetModel]) {
+        let newsFeedViewController = NewsFeedViewController()
+        navigationController.pushViewController(newsFeedViewController, animated: true)
+    }
 }

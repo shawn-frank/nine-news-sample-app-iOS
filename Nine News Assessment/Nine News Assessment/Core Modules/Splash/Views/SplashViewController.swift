@@ -15,6 +15,10 @@ class SplashViewController: UIViewController {
         configureInterface()
     }
     
+    func checkSwift() {
+        let vm = NewsAssetManager(newsService: FetchNewsService<[NewsAssetManager]>)
+    }
+    
     private func configureInterface() {
         view.backgroundColor = .white
         configureSplashImage()
@@ -43,7 +47,7 @@ class SplashViewController: UIViewController {
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityIndicator.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                 constant: CGFloat(-SystemConstants.SplashScreen.progressViewBottomPadding)),
+                                                      constant: CGFloat(-SystemConstants.SplashScreen.progressViewBottomPadding)),
             activityIndicator.widthAnchor.constraint(equalToConstant: CGFloat(SystemConstants.SplashScreen.progressViewWidth)),
             activityIndicator.heightAnchor.constraint(equalToConstant: CGFloat(SystemConstants.SplashScreen.progressViewHeight))
         ])

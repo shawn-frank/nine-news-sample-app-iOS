@@ -8,10 +8,8 @@
 import Foundation
 import Network
 
-struct FetchNewsService: NetworkService {
-    typealias Response = NewsAsset
-    
-    func fetchData() async throws -> [NewsAsset] {
+struct FetchNewsService: NewsFeedNetworkService {
+    func fetchData() async throws -> [NewsAssetModel] {
         guard let fetchNewsURL = URL(string: SystemConstants.NetworkConstants.fetchNewsEndpoint) else {
             throw NetworkError.invalidURL
         }
@@ -29,7 +27,7 @@ struct FetchNewsService: NetworkService {
             throw NetworkError.server
         }
         
-        guard let newsResponse = try? JSONDecoder().decode(NewsResponse.self,
+        guard let newsResponse = try? JSONDecoder().decode(NewsResponseModel.self,
                                                            from: data) else {
             throw NetworkError.decode
         }

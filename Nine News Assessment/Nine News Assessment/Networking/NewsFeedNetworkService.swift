@@ -7,7 +7,6 @@
 
 import Foundation
 
-protocol NetworkService {
-    associatedtype Response
-    func fetchData() async throws -> [Response]
+protocol NewsFeedNetworkService {
+    func fetchData() async throws -> [NewsAssetModel]
 }
