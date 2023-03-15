@@ -12,6 +12,7 @@
 		2B38F79329C155190077099A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B38F79229C155190077099A /* Assets.xcassets */; };
 		2B38F79629C155190077099A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B38F79429C155190077099A /* LaunchScreen.storyboard */; };
 		2B38F7AC29C15EBE0077099A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7AB29C15EBE0077099A /* SplashViewController.swift */; };
+		2B38F7AF29C1609B0077099A /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F7AE29C1609B0077099A /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2B38F79529C155190077099A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B38F79729C155190077099A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B38F7AB29C15EBE0077099A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2B38F7AE29C1609B0077099A /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		2B38F7A729C1584E0077099A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2B38F7AD29C160760077099A /* UIView */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -174,6 +177,14 @@
 				2B38F7AB29C15EBE0077099A /* SplashViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2B38F7AD29C160760077099A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				2B38F7AE29C1609B0077099A /* UIView+Constraints.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 				2B38F7AC29C15EBE0077099A /* SplashViewController.swift in Sources */,
 				2B38F78A29C155180077099A /* AppDelegate.swift in Sources */,
 				2B38F78C29C155180077099A /* SceneDelegate.swift in Sources */,
+				2B38F7AF29C1609B0077099A /* UIView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +402,7 @@
 				DEVELOPMENT_TEAM = 7QNUJ3KXAJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nine News Assessment/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nine News";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -418,6 +431,7 @@
 				DEVELOPMENT_TEAM = 7QNUJ3KXAJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nine News Assessment/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nine News";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
