@@ -25,6 +25,7 @@ class MainCoordinator: Coordinator {
     
     func displayNewsAssets(with newsAssets: [NewsAssetModel]) {
         let newsFeedViewController = NewsFeedViewController()
+        newsFeedViewController.mainCoordinator = self
         navigationController.pushViewController(newsFeedViewController, animated: true)
     }
 }

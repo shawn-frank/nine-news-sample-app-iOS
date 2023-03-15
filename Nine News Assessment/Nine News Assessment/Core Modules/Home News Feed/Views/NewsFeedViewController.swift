@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class NewsFeedViewController: UIViewController {
+    weak var mainCoordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInterface()
