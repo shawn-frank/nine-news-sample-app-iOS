@@ -13,3 +13,9 @@ To experience the final result, you have two options:
 * You can also review a quick glance of the screens below
 
 ![Nine App Screenshots](https://user-images.githubusercontent.com/80219691/225531631-b6ad7b1a-6fe6-45f4-8267-83b1cf780746.png)
+
+## Compile notes
+
+`XCode 13.4.1` was used to develop this sample application with `Swift 5.6`
+
+No external libraries or dependancies were used to complete this project.
