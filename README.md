@@ -53,6 +53,16 @@ I designed the system with `SOLID` in mind. You will most of the solution is qui
 * Wrote tests to check whether the `NewsAssets` received from the service were sorted as desired
 * Wrote tests to check if the right number of `NewsAssets` were decoded
 
+## Code Coverage
+
+While the overall coverage was `73.6%`, I believe this to be sufficient.
+
+My reasoning is the main components which are the `NetworkAssetManager ViewModel` and the `NetworkService` is covered quite well.
+
+<img width="593" alt="image" src="https://user-images.githubusercontent.com/80219691/225543834-a0fbd344-8bea-4d21-9148-ca2e85c15d42.png">
+
+My reasoning is the main components which are the `NetworkAssetManager ViewModel` and the `NetworkService` is covered quite well.
+
 ## Interesting Apple technology used
 * I got a chance to work with `expectations` to wait for `asynchronous` calls as we discussed on our call
 * I then proceeded to refactor that to use `async` test functions by using `async await` for my network layer
