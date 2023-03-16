@@ -50,8 +50,13 @@ The network layer was implemented using `protocols` and `generics` to help make 
 * Wrote tests which integrated the `NewsAssetManager` view model and a mock `NetworkService`
 * Wrote tests to check whether the `NewsAssets` received from the service were sorted as desired
 * Wrote tests to check if the right number of `NewsAssets` were decoded
-* I got a chance to work with `expectations` to wait for `asynchronous` calls
+
+## Interesting Apple technology used
+* I got a chance to work with `expectations` to wait for `asynchronous` calls as we discussed on our call
 * I then proceeded to refactor that to use `async` test functions by using `async await` for my network layer
+* I chose to use `UICollectionViewDiffableDataSource` with the `UICollectionView`. While it wasn't necessary for this use case, it does offer better performance in certain scenarios and I hadn't worked with this API before.
+* I used `NSCache` for the caching mechanism
+* I used `Combine` handle async loading of the image from the cache or from the server as I wanted to learn a bit more about using this framework
 
 ## What I would improve
 
