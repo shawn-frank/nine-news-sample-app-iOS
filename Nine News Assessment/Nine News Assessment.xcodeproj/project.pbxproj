@@ -41,19 +41,11 @@
 		2B38F80629C2B8C50077099A /* NewsAssetManagerServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F80529C2B8C50077099A /* NewsAssetManagerServiceIntegrationTests.swift */; };
 		2B38F80829C2BDAA0077099A /* NewsAssetManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F80729C2BDAA0077099A /* NewsAssetManagerTests.swift */; };
 		2B38F80B29C2BF960077099A /* Int64+Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F80A29C2BF960077099A /* Int64+Timestamp.swift */; };
-		2B38F81329C2CBF30077099A /* SplashScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F81229C2CBF30077099A /* SplashScreenTests.swift */; };
-		2B38F81529C2CBF30077099A /* Nine_News_Assessment_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F81429C2CBF30077099A /* Nine_News_Assessment_UITestsLaunchTests.swift */; };
+		2B38F81D29C2D6690077099A /* AsyncImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38F81C29C2D6690077099A /* AsyncImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		2B38F7F629C2A8380077099A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B38F77E29C155180077099A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2B38F78529C155180077099A;
-			remoteInfo = "Nine News Assessment";
-		};
-		2B38F81629C2CBF30077099A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2B38F77E29C155180077099A /* Project object */;
 			proxyType = 1;
@@ -100,9 +92,7 @@
 		2B38F80529C2B8C50077099A /* NewsAssetManagerServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAssetManagerServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		2B38F80729C2BDAA0077099A /* NewsAssetManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAssetManagerTests.swift; sourceTree = "<group>"; };
 		2B38F80A29C2BF960077099A /* Int64+Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int64+Timestamp.swift"; sourceTree = "<group>"; };
-		2B38F81029C2CBF30077099A /* Nine News Assessment UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nine News Assessment UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B38F81229C2CBF30077099A /* SplashScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenTests.swift; sourceTree = "<group>"; };
-		2B38F81429C2CBF30077099A /* Nine_News_Assessment_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine_News_Assessment_UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B38F81C29C2D6690077099A /* AsyncImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +110,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B38F80D29C2CBF30077099A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,7 +118,6 @@
 			children = (
 				2B38F78829C155180077099A /* Nine News Assessment */,
 				2B38F7F329C2A8380077099A /* Nine News Assessment Unit Tests */,
-				2B38F81129C2CBF30077099A /* Nine News Assessment UITests */,
 				2B38F78729C155180077099A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,7 +127,6 @@
 			children = (
 				2B38F78629C155180077099A /* Nine News Assessment.app */,
 				2B38F7F229C2A8380077099A /* Nine News Assessment Unit Tests.xctest */,
-				2B38F81029C2CBF30077099A /* Nine News Assessment UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +212,7 @@
 		2B38F7A729C1584E0077099A /* Helpers & Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2B38F81B29C2D6550077099A /* AsyncImage */,
 				2B38F80929C2BF850077099A /* Int64 */,
 				2B38F7D029C1D4490077099A /* Date */,
 				2B38F7C529C190750077099A /* Coordinator */,
@@ -343,13 +325,12 @@
 			path = Int64;
 			sourceTree = "<group>";
 		};
-		2B38F81129C2CBF30077099A /* Nine News Assessment UITests */ = {
+		2B38F81B29C2D6550077099A /* AsyncImage */ = {
 			isa = PBXGroup;
 			children = (
-				2B38F81229C2CBF30077099A /* SplashScreenTests.swift */,
-				2B38F81429C2CBF30077099A /* Nine_News_Assessment_UITestsLaunchTests.swift */,
+				2B38F81C29C2D6690077099A /* AsyncImageService.swift */,
 			);
-			path = "Nine News Assessment UITests";
+			path = AsyncImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,24 +371,6 @@
 			productReference = 2B38F7F229C2A8380077099A /* Nine News Assessment Unit Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2B38F80F29C2CBF30077099A /* Nine News Assessment UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B38F81829C2CBF30077099A /* Build configuration list for PBXNativeTarget "Nine News Assessment UITests" */;
-			buildPhases = (
-				2B38F80C29C2CBF30077099A /* Sources */,
-				2B38F80D29C2CBF30077099A /* Frameworks */,
-				2B38F80E29C2CBF30077099A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2B38F81729C2CBF30077099A /* PBXTargetDependency */,
-			);
-			name = "Nine News Assessment UITests";
-			productName = "Nine News Assessment UITests";
-			productReference = 2B38F81029C2CBF30077099A /* Nine News Assessment UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -424,10 +387,6 @@
 					2B38F7F129C2A8380077099A = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
-						TestTargetID = 2B38F78529C155180077099A;
-					};
-					2B38F80F29C2CBF30077099A = {
-						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 2B38F78529C155180077099A;
 					};
 				};
@@ -447,7 +406,6 @@
 			targets = (
 				2B38F78529C155180077099A /* Nine News Assessment */,
 				2B38F7F129C2A8380077099A /* Nine News Assessment Unit Tests */,
-				2B38F80F29C2CBF30077099A /* Nine News Assessment UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -467,13 +425,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B38F80329C2B22E0077099A /* NewsAssets.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B38F80E29C2CBF30077099A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +451,7 @@
 				2B38F7B829C16C6C0077099A /* NewsAssetModel.swift in Sources */,
 				2B38F7CB29C1955D0077099A /* NewsFeedViewController.swift in Sources */,
 				2B38F7D629C1F5250077099A /* NewsFeedCell.swift in Sources */,
+				2B38F81D29C2D6690077099A /* AsyncImageService.swift in Sources */,
 				2B38F7C029C1722E0077099A /* NetworkErrors.swift in Sources */,
 				2B38F7B229C162340077099A /* SystemConstants.swift in Sources */,
 				2B38F7AC29C15EBE0077099A /* SplashViewController.swift in Sources */,
@@ -525,15 +477,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B38F80C29C2CBF30077099A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2B38F81329C2CBF30077099A /* SplashScreenTests.swift in Sources */,
-				2B38F81529C2CBF30077099A /* Nine_News_Assessment_UITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -541,11 +484,6 @@
 			isa = PBXTargetDependency;
 			target = 2B38F78529C155180077099A /* Nine News Assessment */;
 			targetProxy = 2B38F7F629C2A8380077099A /* PBXContainerItemProxy */;
-		};
-		2B38F81729C2CBF30077099A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2B38F78529C155180077099A /* Nine News Assessment */;
-			targetProxy = 2B38F81629C2CBF30077099A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -782,40 +720,6 @@
 			};
 			name = Release;
 		};
-		2B38F81929C2CBF30077099A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7QNUJ3KXAJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mindhyve.practice.nine-assessment.Nine-News-Assessment-UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Nine News Assessment";
-			};
-			name = Debug;
-		};
-		2B38F81A29C2CBF30077099A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7QNUJ3KXAJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mindhyve.practice.nine-assessment.Nine-News-Assessment-UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Nine News Assessment";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -842,15 +746,6 @@
 			buildConfigurations = (
 				2B38F7F929C2A8380077099A /* Debug */,
 				2B38F7FA29C2A8380077099A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2B38F81829C2CBF30077099A /* Build configuration list for PBXNativeTarget "Nine News Assessment UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2B38F81929C2CBF30077099A /* Debug */,
-				2B38F81A29C2CBF30077099A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

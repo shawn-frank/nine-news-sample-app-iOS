@@ -9,4 +9,6 @@ import Foundation
 
 extension Notification.Name {
     static let newsFeedUpdates = Notification.Name("com.mindhyve.practice.nine-assessment.news-feed-updates")
+    
+    static let imageDownloaded = Notification.Name("com.mindhyve.practice.nine-assessment.image-downloaded")
 }

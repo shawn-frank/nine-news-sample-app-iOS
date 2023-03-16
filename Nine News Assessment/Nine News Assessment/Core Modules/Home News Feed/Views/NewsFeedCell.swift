@@ -46,10 +46,7 @@ class NewsFeedCell: UICollectionViewCell {
             return
         }
         
-        let request = URLRequest(url: thumbnailURL)
-        let session = URLSession(configuration: .default)
-        subscriber = session.dataTaskPublisher(for: request)
-            .map { UIImage(data: $0.data) }
+        subscriber = AsyncImageService.shared.loadImage(thumbnailURL)
             .replaceError(with: nil)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.thumbNail.image = $0 }
