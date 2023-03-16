@@ -39,6 +39,8 @@ I also used the `Coordinator` design pattern to decouple the navigation logic fr
 
 The network layer was implemented using `protocols` and `generics` to help make it scalable and testable.
 
+I designed the system with `SOLID` in mind. You will most of the solution is quite modular, loosely coupled and scalable.
+
 ## Unit Testing
 
 * Wrote tests for whether the time of day extension gave back the correct greeting
