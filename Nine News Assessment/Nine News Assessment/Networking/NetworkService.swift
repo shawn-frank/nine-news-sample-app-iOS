@@ -28,7 +28,7 @@ extension NetworkService {
         do {
             return try JSONDecoder().decode(Response.self, from: data)
         } catch {
-            throw NetworkError.decode(error)
+            throw NetworkError.decode
         }
     }
 }
