@@ -47,7 +47,7 @@ class NewsAssetManagerServiceTests: XCTestCase {
                 }
                 
                 if let previousTimestamp = previousNewsAsset?.timeStamp {
-                    XCTAssertGreaterThan(previousTimestamp, asset.timeStamp, "News assets are not sorted")
+                    XCTAssertGreaterThanOrEqual(previousTimestamp, asset.timeStamp, "News assets are not sorted")
                 }
             }
         }
