@@ -133,7 +133,6 @@
 		2B38F79F29C157D50077099A /* Home News Feed */ = {
 			isa = PBXGroup;
 			children = (
-				2B38F7A129C158020077099A /* Models */,
 				2B38F7A229C158070077099A /* Views */,
 				2B38F7A329C1580D0077099A /* ViewModels */,
 			);
@@ -146,13 +145,6 @@
 				2B38F7A529C1582B0077099A /* Views */,
 			);
 			path = "Web View";
-			sourceTree = "<group>";
-		};
-		2B38F7A129C158020077099A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		2B38F7A229C158070077099A /* Views */ = {

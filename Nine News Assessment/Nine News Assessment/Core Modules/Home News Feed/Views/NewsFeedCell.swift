@@ -58,7 +58,6 @@ class NewsFeedCell: UICollectionViewCell {
 // MARK: CONFIGURE LAYOUT
 extension NewsFeedCell {
     
-    
     private func configureCell() {
         contentView.backgroundColor = .white
         configureImageView()
