@@ -83,6 +83,7 @@ extension NewsFeedViewController {
             
             cell.headline.text = newsAsset.headline
             cell.abstract.text = newsAsset.abstract
+            cell.published.text = self?.newsAssetManager.getPublishedDate(of: newsAsset)
             
             let thumbnailImageURLString = self?.newsAssetManager.getThumbnailURL(for: newsAsset)
             cell.loadThumbnail(thumbnailImageURLString)

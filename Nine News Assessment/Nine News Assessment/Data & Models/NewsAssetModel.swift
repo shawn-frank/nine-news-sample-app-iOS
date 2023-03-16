@@ -14,6 +14,7 @@ struct NewsAssetModel: Decodable, Hashable {
     let author: String
     let url: String
     let images: [NewsImageModel]
+    let timeStamp: Int64
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,5 +23,6 @@ struct NewsAssetModel: Decodable, Hashable {
         case author = "byLine"
         case url
         case images = "relatedImages"
+        case timeStamp
     }
 }

@@ -12,9 +12,11 @@ extension SystemConstants {
         static let headlineHeight: Float = 50
         static let headlineFontSize: Float = 16
         static let headlineLines = 2
-        static let abstractLines = 4
+        static let abstractLines = 3
+        static let publishedOnLines = 1
         static let abstractFontSize: Float = 12
-        static let cellHeight: Float = 130
+        static let publishedOnSize: Float = 10
+        static let cellHeight: Float = 150
         static let padding: Float = 15
         static let thumbnailCornerRadius: Float = 5
         static let sampleHeadline = "Headline"

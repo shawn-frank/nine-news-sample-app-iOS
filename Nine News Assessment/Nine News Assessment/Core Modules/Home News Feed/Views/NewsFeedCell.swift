@@ -14,6 +14,7 @@ class NewsFeedCell: UICollectionViewCell {
     var thumbNail: UIImageView!
     var headline: UILabel!
     var abstract: UILabel!
+    var published: UILabel!
     
     var subscriber: AnyCancellable?
     
@@ -63,6 +64,7 @@ extension NewsFeedCell {
         configureImageView()
         configureHeadlineLabel()
         configureAbstractLabel()
+        configurePublishedOnLabel()
         setCellConstraints()
     }
     
@@ -98,10 +100,21 @@ extension NewsFeedCell {
         abstract.numberOfLines = SystemConstants.NewsFeed.abstractLines
     }
     
+    private func configurePublishedOnLabel() {
+        published = UILabel()
+        published.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(published)
+        published.font = UIFont.systemFont(ofSize: CGFloat(SystemConstants.NewsFeed.publishedOnSize))
+        published.textColor = .publishedBlack
+        published.textAlignment = .right
+        published.numberOfLines = SystemConstants.NewsFeed.publishedOnLines
+    }
+    
     private func setCellConstraints() {
         setimageViewConstraints()
         setHeadlineLabelConstraints()
         setAbstractLabelConstraints()
+        setPublishedOnLabelConstraints()
     }
     
     private func setimageViewConstraints() {
@@ -135,6 +148,17 @@ extension NewsFeedCell {
             abstract.topAnchor.constraint(equalTo: headline.bottomAnchor,
                                           constant: CGFloat(SystemConstants.NewsFeed.padding)),
             abstract.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                               constant: CGFloat(-SystemConstants.NewsFeed.padding)),
+        ])
+    }
+    
+    private func setPublishedOnLabelConstraints() {
+        NSLayoutConstraint.activate([
+            published.leadingAnchor.constraint(equalTo: thumbNail.trailingAnchor,
+                                              constant: CGFloat(SystemConstants.NewsFeed.padding)),
+            published.topAnchor.constraint(equalTo: abstract.bottomAnchor,
+                                          constant: CGFloat(SystemConstants.NewsFeed.padding)),
+            published.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                                                constant: CGFloat(-SystemConstants.NewsFeed.padding)),
         ])
     }

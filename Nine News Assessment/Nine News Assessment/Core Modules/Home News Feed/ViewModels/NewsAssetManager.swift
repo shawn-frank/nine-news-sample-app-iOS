@@ -25,7 +25,7 @@ final class NewsAssetManager {
         }
         
         let responseModel: NewsResponseModel = try await newsService.fetchData(url: fetchNewsURL)
-        newsAssets = responseModel.assets
+        newsAssets = responseModel.assets.sorted { $0.timeStamp > $1.timeStamp }
         
         updateUI?()
     }
@@ -40,5 +40,9 @@ final class NewsAssetManager {
         }.map { $0.url }
         
         return sortedAssetImages.first
+    }
+    
+    func getPublishedDate(of newsAsset: NewsAssetModel) -> String {
+        return "Published on \(newsAsset.timeStamp.dateFromTimeStamp)"
     }
 }
