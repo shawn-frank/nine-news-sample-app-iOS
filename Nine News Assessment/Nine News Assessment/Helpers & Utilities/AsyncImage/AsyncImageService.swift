@@ -14,7 +14,6 @@ class AsyncImageService {
     
     func loadImage(_ url: URL) -> AnyPublisher <UIImage?, Never> {
         if let image = cache.object(forKey: url.absoluteString as NSString) {
-            print("Loading \(url) from the cache")
             let publisher: AnyPublisher <UIImage?, Never> = Just(image).eraseToAnyPublisher()
             return publisher
         }
@@ -24,7 +23,6 @@ class AsyncImageService {
         let publisher: AnyPublisher <UIImage?, Never> = session.dataTaskPublisher(for: url).map
         { [weak self] data, response in
             guard let image = UIImage(data: data) else { return nil }
-            print("Loading \(url.absoluteString) from the server")
             self?.cache.setObject(image, forKey: url.absoluteString as NSString)
             return image
         }
