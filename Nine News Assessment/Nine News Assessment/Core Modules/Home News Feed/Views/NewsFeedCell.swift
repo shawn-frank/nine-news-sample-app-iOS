@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class NewsFeedCell: UICollectionViewCell {
     static let identifier = "com.mindhyve.practice.nine-assessment.News-Feed-Cell"
@@ -13,6 +14,8 @@ class NewsFeedCell: UICollectionViewCell {
     var thumbNail: UIImageView!
     var headline: UILabel!
     var abstract: UILabel!
+    
+    var subscriber: AnyCancellable?
     
     // Even though this is considered unsafe, there is no chance of
     // Storyboard instantiation in this projects
@@ -31,12 +34,24 @@ class NewsFeedCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         thumbNail.image = nil
+        subscriber?.cancel()
         super.prepareForReuse()
     }
     
-    func loadNewsAsset(_ newsAsset: NewsAssetModel) {
-        headline.text = newsAsset.headline
-        abstract.text = newsAsset.abstract
+    func loadThumbnail(_ urlString: String?) {
+        
+        guard let urlString = urlString,
+              let thumbnailURL = URL(string: urlString) else {
+            return
+        }
+        
+        let request = URLRequest(url: thumbnailURL)
+        let session = URLSession(configuration: .default)
+        subscriber = session.dataTaskPublisher(for: request)
+            .map { UIImage(data: $0.data) }
+            .replaceError(with: nil)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in self?.thumbNail.image = $0 }
     }
 }
 
@@ -96,7 +111,7 @@ extension NewsFeedCell {
             thumbNail.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
                                                constant: CGFloat(SystemConstants.NewsFeed.padding)),
             thumbNail.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                               constant: CGFloat(SystemConstants.NewsFeed.padding)),
+                                           constant: CGFloat(SystemConstants.NewsFeed.padding)),
             thumbNail.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
                                               constant: CGFloat(-SystemConstants.NewsFeed.padding)),
             thumbNail.widthAnchor.constraint(equalTo: thumbNail.heightAnchor, multiplier: 1)
@@ -106,22 +121,22 @@ extension NewsFeedCell {
     private func setHeadlineLabelConstraints() {
         NSLayoutConstraint.activate([
             headline.leadingAnchor.constraint(equalTo: thumbNail.trailingAnchor,
-                                               constant: CGFloat(SystemConstants.NewsFeed.padding)),
+                                              constant: CGFloat(SystemConstants.NewsFeed.padding)),
             headline.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                               constant: CGFloat(SystemConstants.NewsFeed.padding)),
+                                          constant: CGFloat(SystemConstants.NewsFeed.padding)),
             headline.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                                constant: CGFloat(-SystemConstants.NewsFeed.padding)),
+                                               constant: CGFloat(-SystemConstants.NewsFeed.padding)),
         ])
     }
     
     private func setAbstractLabelConstraints() {
         NSLayoutConstraint.activate([
             abstract.leadingAnchor.constraint(equalTo: thumbNail.trailingAnchor,
-                                               constant: CGFloat(SystemConstants.NewsFeed.padding)),
+                                              constant: CGFloat(SystemConstants.NewsFeed.padding)),
             abstract.topAnchor.constraint(equalTo: headline.bottomAnchor,
-                                               constant: CGFloat(SystemConstants.NewsFeed.padding)),
+                                          constant: CGFloat(SystemConstants.NewsFeed.padding)),
             abstract.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                                constant: CGFloat(-SystemConstants.NewsFeed.padding)),
+                                               constant: CGFloat(-SystemConstants.NewsFeed.padding)),
         ])
     }
 }

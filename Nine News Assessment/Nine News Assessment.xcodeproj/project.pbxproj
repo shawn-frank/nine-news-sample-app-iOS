@@ -99,11 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				2B38F79D29C155A60077099A /* System */,
-				2B38F7A829C1587E0077099A /* Networking */,
 				2B38F7A729C1584E0077099A /* Helpers & Utilities */,
+				2B38F7A829C1587E0077099A /* Networking */,
+				2B38F7E929C2941D0077099A /* Data & Models */,
 				2B38F79E29C157BF0077099A /* Core Modules */,
 				2B38F79229C155190077099A /* Assets.xcassets */,
-				2B38F79429C155190077099A /* LaunchScreen.storyboard */,
 				2B38F79729C155190077099A /* Info.plist */,
 			);
 			path = "Nine News Assessment";
@@ -112,6 +112,7 @@
 		2B38F79D29C155A60077099A /* System */ = {
 			isa = PBXGroup;
 			children = (
+				2B38F79429C155190077099A /* LaunchScreen.storyboard */,
 				2B38F7B029C161FB0077099A /* System Constants */,
 				2B38F78929C155180077099A /* AppDelegate.swift */,
 				2B38F78B29C155180077099A /* SceneDelegate.swift */,
@@ -150,9 +151,6 @@
 		2B38F7A129C158020077099A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2B38F7B529C16BAE0077099A /* NewsResponseModel.swift */,
-				2B38F7B729C16C6C0077099A /* NewsAssetModel.swift */,
-				2B38F7B929C16CD20077099A /* NewsImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +254,16 @@
 				2B38F7D129C1D4560077099A /* Date+Greeting.swift */,
 			);
 			path = Date;
+			sourceTree = "<group>";
+		};
+		2B38F7E929C2941D0077099A /* Data & Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B38F7B529C16BAE0077099A /* NewsResponseModel.swift */,
+				2B38F7B729C16C6C0077099A /* NewsAssetModel.swift */,
+				2B38F7B929C16CD20077099A /* NewsImageModel.swift */,
+			);
+			path = "Data & Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

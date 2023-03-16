@@ -9,7 +9,7 @@ import Foundation
 
 struct NewsImageModel: Decodable, Hashable {
     let id: Int
-    let url: String?
+    let url: String
     let width: Int
     let height: Int
 }

@@ -73,14 +73,20 @@ extension NewsFeedViewController {
     
     func configureDataSource() {
         // Create diffable data source & connect it to the collection view
-        dataSource = UICollectionViewDiffableDataSource<NewsCollectionViewSection, NewsAssetModel>(collectionView: newsFeedCollectionView) { (collectionView: UICollectionView, indexPath: IndexPath, newsAsset: NewsAssetModel) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<NewsCollectionViewSection, NewsAssetModel>(collectionView: newsFeedCollectionView) { [weak self]
+            (collectionView: UICollectionView, indexPath: IndexPath, newsAsset: NewsAssetModel) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsFeedCell.identifier,
                                                                 for: indexPath) as? NewsFeedCell else {
                 return UICollectionViewCell()
             }
             
-            cell.loadNewsAsset(newsAsset)
+            cell.headline.text = newsAsset.headline
+            cell.abstract.text = newsAsset.abstract
+            
+            let thumbnailImageURLString = self?.newsAssetManager.getThumbnailURL(for: newsAsset)
+            cell.loadThumbnail(thumbnailImageURLString)
+            
             return cell
         }
         

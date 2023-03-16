@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class NewsAssetManager {
     private(set) var newsAssets: [NewsAssetModel] = []
@@ -27,5 +28,17 @@ final class NewsAssetManager {
         newsAssets = responseModel.assets
         
         updateUI?()
+    }
+    
+    
+    /// Returns the smallest image of a news asset by area
+    /// - Parameter newsAsset: The news asset object
+    /// - Returns: A URL string of the smallest image or nil if the news asset has no images
+    func getThumbnailURL(for newsAsset: NewsAssetModel) -> String? {
+        let sortedAssetImages = newsAsset.images.sorted {
+            ($0.width * $0.height) < ($1.width * $1.height)
+        }.map { $0.url }
+        
+        return sortedAssetImages.first
     }
 }
