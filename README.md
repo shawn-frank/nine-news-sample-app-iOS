@@ -52,3 +52,9 @@ The network layer was implemented using `protocols` and `generics` to help make 
 * Wrote tests to check if the right number of `NewsAssets` were decoded
 * I got a chance to work with `expectations` to wait for `asynchronous` calls
 * I then proceeded to refactor that to use `async` test functions by using `async await` for my network layer
+
+## What I would improve
+
+* Adding UI Tests as I did not get time to add these yet and it is something new to me
+* Adding a `UIRefreshControl` to the `UICollectionView`
+* Adding better error handling to the `Cache` implementation
