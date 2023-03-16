@@ -38,3 +38,17 @@ The software architecture pattern I used was `MVVM` as this was what was describ
 I also used the `Coordinator` design pattern to decouple the navigation logic from the view controllers.
 
 The network layer was implemented using `protocols` and `generics` to help make it scalable and testable.
+
+## Unit Testing
+
+* Wrote tests for whether the time of day extension gave back the correct greeting
+* Wrote tests to check if the smallest thumbnail was indeed returned by the `NewsAssetManager`
+* Wrote tests to check whether the model was configured correctly to decode the current JSON structure returned by the API
+
+## Integration Testing
+
+* Wrote tests which integrated the `NewsAssetManager` view model and a mock `NetworkService`
+* Wrote tests to check whether the `NewsAssets` received from the service were sorted as desired
+* Wrote tests to check if the right number of `NewsAssets` were decoded
+* I got a chance to work with `expectations` to wait for `asynchronous` calls
+* I then proceeded to refactor that to use `async` test functions by using `async await` for my network layer
