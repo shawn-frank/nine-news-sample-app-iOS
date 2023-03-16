@@ -10,7 +10,7 @@ import XCTest
 
 class NewsAssetManagerServiceTests: XCTestCase {
 
-    func test_success_news_asset_fetch_request() async{
+    func test_success_news_asset_fetch_request() async {
         let service = SuccessNewsFeedService()
         let sut = NewsAssetManager(newsService: service)
         
@@ -33,4 +33,25 @@ class NewsAssetManagerServiceTests: XCTestCase {
         }
     }
 
+    func test_sorting_descending_order_news_assets() async {
+        let service = SuccessNewsFeedService()
+        let sut = NewsAssetManager(newsService: service)
+        
+        sut.updateUI = {
+            var previousNewsAsset: NewsAssetModel?
+            
+            for asset in sut.newsAssets {
+                if previousNewsAsset == nil {
+                    previousNewsAsset = asset
+                    continue
+                }
+                
+                if let previousTimestamp = previousNewsAsset?.timeStamp {
+                    XCTAssertGreaterThan(previousTimestamp, asset.timeStamp, "News assets are not sorted")
+                }
+            }
+        }
+        
+        try? await sut.fetchNewsAssets()
+    }
 }
