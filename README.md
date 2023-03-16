@@ -30,3 +30,11 @@ The user interface and app experience was built programatically.
 
 I chose to use `UICollectionViewDiffableDataSource` with the `UICollectionView`. 
 While it wasn't necessary for this use case, it does offer better performance in certain scenarios and I hadn't worked with this API before.
+
+## System Design
+
+The software architecture pattern I used was `MVVM` as this was what was described as preferred at Nine.
+
+I also used the `Coordinator` design pattern to decouple the navigation logic from the view controllers.
+
+The network layer was implemented using `protocols` and `generics` to help make it scalable and testable.
