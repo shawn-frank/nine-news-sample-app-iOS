@@ -72,6 +72,10 @@ My reasoning is the main components which are the `NetworkAssetManager ViewModel
 
 ## What I would improve
 
-* Adding UI Tests as I did not get time to add these yet and it is something new to me
-* Adding a `UIRefreshControl` to the `UICollectionView`
-* Adding better error handling to the `Cache` implementation
+* Adding UI Tests as I did not get time to add these yet and it is something new to me.
+* For example UI Tests to verify loading feedback with spinners, greeting labels, data labels with a mock network layer and error handling
+* Adding a `UIRefreshControl` to the `UICollectionView` to reload data on the news feed screen
+* More time and thought to the system design of the `Cache` implementation
+* Moving the `load data` responsibility to the `model` to make it more reusable with different data sources
+* More thought to creating a more robust `network layer` to work with different schemes, endpoints, HTTP requests & parameters
+* Perhaps the `View` and the `ViewModel` could be generalized further
