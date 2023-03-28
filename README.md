@@ -79,3 +79,5 @@ My reasoning is the main components which are the `NetworkAssetManager ViewModel
 * Moving the `load data` responsibility to the `model` to make it more reusable with different data sources
 * More thought to creating a more robust `network layer` to work with different schemes, endpoints, HTTP requests & parameters
 * Perhaps the `View` and the `ViewModel` could be generalized further
+* Writing some tests to verify the cache mechanism
+* Error handling of different network errors
