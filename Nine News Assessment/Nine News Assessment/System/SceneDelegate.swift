@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         mainCoordinator = MainCoordinator()
-        mainCoordinator?.start()
+        mainCoordinator?.start() // check main coordinator so as to handle the scenario where it was not initialized for whateever reason
         
         // Configuration to use the app without storyboards
         window = UIWindow(frame: UIScreen.main.bounds)

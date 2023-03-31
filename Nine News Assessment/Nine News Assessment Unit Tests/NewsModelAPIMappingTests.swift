@@ -21,6 +21,7 @@ class NewsModelAPIMappingTests: XCTestCase {
                 
         XCTAssertNotNil(result, "Decoding NewsAssets.json should not be nil")
         XCTAssertEqual(result?.assets.count, 18, "There should be 18 news items loaded from NewsAssets.json")
+        // check the values and properties
     }
 }
 
